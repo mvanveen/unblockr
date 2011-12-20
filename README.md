@@ -28,7 +28,4 @@ $($('body')[0]).stop().css('background-color', 'rgb(76, 10, 8)');
 3. mitigation: #104536
 $($('body')[0]).stop().css('background-color', 'rgb(16, 69, 54)');
 
-Event stream:
-
-User.Created
 
