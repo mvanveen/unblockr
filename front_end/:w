@@ -1,0 +1,221 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700italic|Amaranth:400,400italic' rel='stylesheet' type='text/css'>
+  
+  <style>
+  
+
+   html, body {height: 100%;margin:0;font-family;PT+Sans;}
+   
+   #wrap {min-height: 100%;}
+   
+   #main {overflow:auto;
+   	padding-bottom: 150px;}  /* must be same height as the footer */
+     #footer {
+       position: relative;
+       margin-top: -150px; /* negative value of footer height */
+       height: 150px;
+       clear: both;
+       border-radius: 5px;
+       border-top: 5px solid rgba(192, 230, 20, .2);
+       border-bottom: 5px solid rgba(12, 67, 117, .90);
+       background-color: rgba(12, 67, 117, .90);
+       opacity: .7;
+     } 
+
+    #background {
+      zoom:150%;
+      -moz-box-shadow: 5px 5px 0px black;
+      -webkit-box-shadow: 5px 0px 5px black;
+      box-shadow: 10px 10px 0px rgba(76, 11, 8, .2);
+      width:500px;
+      border: 2px solid rgba(255, 255, 255, .2);
+      background-color: rgba(13, 84, 140, .9);
+      border-radius:5px;
+      margin:20px;
+      margin-top:5;
+      padding:40px;
+      padding-top:0;
+    }
+
+    #lol {
+      color:#white;
+      
+      opacity: 1.;
+    }
+
+  </style>
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://beta1.plankton.envolve.com/static/plankton.js"></script>
+  <script>
+
+  url = 'http://beta1.plankton.envolve.com/lulz';
+
+   $($(document)).ready( function() {
+      function handle_input(input){
+        $('#question_text').fadeOut(
+          'slow',
+          function(){
+            $(this)
+              .hide()
+              .text(input)
+              .fadeIn('slow')
+              .delay(100);
+         }).delay(100)
+       };
+
+      $($('#blocked')).hide();
+      $($('#thinking')).hide();
+      $('#button').hide();
+      $('#question_text').text('Welcome!  What is your name?');
+
+      $('#button2').click( function() {
+        handle_input('Hi name!  What are you blocked by?');
+      });
+
+      $("#question_input").keypress(function(event) {
+        if ( event.which == 13 ) {
+          user = make_user($('#question_input')[0].value);
+          
+          handle_input('Hi ' + user.name + '!  What are you blocked by?');
+
+        }});
+
+
+    function make_user(name) {
+      this.name = name;
+
+      this.ref.watch()
+
+      function serialize() {
+        var rev = Plankton.getNode( url + '/users/' + this.name );
+        ref.set({
+          'name': this.name
+        });
+      };
+
+      function check_name () {
+        // Checks to see if there's a name conflict
+        alert(dataNode.val());
+        if (!dataNode.val()) {
+          dataNode.set({'name': name});
+        };
+      };
+
+      check_name();
+        // if there is contention, then prompt the user for input
+
+      return this
+    };
+
+    });
+
+
+  </script>
+
+</head>
+
+<body style='background-color:#2B3802;'>
+</div>
+  
+  <div id="wrap">
+  <div id="container">
+    
+    <!---div style='float:top;text-align:right;color:white;'> | Login via Twitter | Login via Facebook | </div --!>
+    <header>
+        <div id='title' style='float:top;'>
+    <i><h1 style="font-family: 'Amaranth', sans-serif;color:white;text-shadow: 0.1em 0.1em black;font-size:80px;margin:0px;">Unblock.me
+    </h1></i>
+    </div>
+    </header>
+    <hr style='background-color: white; border-radius-top-right: 5px; border-radius-bottom-right: 5px;border:5px solid white;margin:0px;width: 420px;box-shadow: 5px 5px 0 black;'/>
+    <div id='blocked' style='border:2px solid black;margin:0px;padding:0px;margin-top:20px;'>
+    <div style='border: 5px solid #6B1A0F;width:100%;margin:20px;padding:5px;background-color:#841A0B;margin:0;'>
+    <img src='http://www.clker.com/cliparts/l/y/O/W/g/n/black-red-white-warning-1-hi.png' height='50' width='50' /><span style='color:white;'><b><span style='color:yellow;'>ATTN:</span></b> Someone is blocked by you!</span>
+    <b><span style="color:white;font-family: 'Amaranth', sans-serif;border:3px solid rgba(0, 0, 0, .6); color:white; border-radius:5px;background-color:#;padding:3px;margin-left:5px;background-color:#092145;padding:4px;margin-left:14px;">Unblock Them!</span></b>
+    </div>
+    </div> 
+    <div id="main" role="main">
+  
+
+    <div id='background'>
+      <div id='question'>
+      <div id='lol'>
+        <h2 style='color:white;text-shadow: 2px 2px black;'><span style="font-family:'Aranth'">Q:</span> <span id='question_text'></span></h2>
+        <h2 style='display:none;color:white;'>Who is blocking you?</h2>
+      </div>
+      <div id='question_bar' >
+        <input id='question_input' style='width:87%;border-radius:5px;font-size:2em;' />
+        <span id='button2' style='padding:0px;width:50px;border-radius:5px;font-size:2em;background-color:rgba(9, 33, 69, 1);float:right;color:white;text-shadow:2px 2px solid black;padding-left:5px;border: 1px solid black;'> OK
+        </span>
+
+      </div>
+    </div>
+   
+        <div id='button' style='padding:0px;width:100%;border-radius:5px;font-size:2em;background-color:rgba(76, 10, 8, 1);'>
+      <center>
+      <b><p style="color:white;font-family: 'Amaranth', sans-serif;border:3px solid rgba(0, 0, 0, .6); color:white; border-radius:5px;">Unblock Me!</p></b>
+      </center>
+   
+    </div>
+    
+    </div>
+    
+  </div>
+  </div>
+
+  <footer >
+  </div> <!--! end of #container -->
+
+  <div id='footer' style="">
+<div style='float:top;text-align:right;margin:0;color:white;padding-right:15px;height:30px;'>
+    <h2 style='font-size:20px;text-shadow:0.1em 0.1em black;'>0 weeks, 0 days, 00:00:00 since last incident</h2>
+  </div>
+
+    <p style='color:white;padding-top:70px;'>Unblock.me is designed, implemented, tested, and operated by <a href='http://mvanveen.net/' style='color:white'>Michael Van Veen</a> (necessarily not in that order). Copyright 2011.</p>
+  </div>
+  </footer>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- end scripts-->
+
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
