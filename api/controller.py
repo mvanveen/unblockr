@@ -13,6 +13,7 @@ def create_user(name='', fbid='', group=''):
 
   Uses facebook for authentication
   '''
+  # TODO: check to make sure user is not already_taken
   #TODO: check fb, get fb token.
   #TODO: check to make sure block id is good
 
@@ -34,10 +35,17 @@ def create_user(name='', fbid='', group=''):
   user.date_modified    = now
   #TODO: put in transaction
 
+
 def get_user(id=''):
   assert isinstance(id, basestring), 'Expected id to be a string'
   return User.get_by_id(id)
 
-def get_user_by_username(usename='')
 
+def get_user_by_username(usename='')
+  assert isinstance(username, basestring), 'Expected username to be a string'
+  #TODO: Modify query to be correct
+  user = db.User.filter('username =', username).get()
+
+
+def create_block(blocker='', blockee='')
 
