@@ -11,10 +11,11 @@ use cases:
 ## /user
 - add a new user
 
-## /user/:id
+## /user/:name
 - username
 
-## /user/:id/blocks
+## /user/:name/blocks
+# int -> [int]
 
 ## /block
 - add a new block

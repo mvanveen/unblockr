@@ -41,11 +41,17 @@ def get_user(id=''):
   return User.get_by_id(id)
 
 
+@app.route('/user/:name')
 def get_user_by_username(usename='')
   assert isinstance(username, basestring), 'Expected username to be a string'
   #TODO: Modify query to be correct
   user = db.User.filter('username =', username).get()
 
 
-def create_block(blocker='', blockee='')
+def create_block(blocker='', blockee='', reason='')
+  # TODO check if block exists
+
+
+#TODO: get_blocks_by_username()
+
 

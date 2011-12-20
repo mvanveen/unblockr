@@ -70,8 +70,8 @@ def test_can_create_block(mitgated=False):
   user2 = test_can_create_new_user() # response from 2nd request
   block = test_make_block(user1, user2, msg)
 
-  assert block.get('blocker') == user1.get('name')
-  assert block.get('blockee') == user1.get('name')
+  assert block.get('blocker') == user.get('name')
+  assert block.get('blockee') == user2.get('name')
   assert block.reason == msg
 
   return (user, user2, block)
