@@ -1,14 +1,7 @@
 Unblock me!
 ===========
 
-Domain names
-------------
-- deblock.me
-- deblockr.com
-- unblock.do
-- unblocke.do
-- blocke.do
-
+This is a webapp I wanted to maybe get off the ground that never went anywhere.  Kind of pretty UI though!
 
 names
 -----
